@@ -1,0 +1,83 @@
+﻿<!DOCTYPE  html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<title>Blog Edit</title>
+<style type="text/css">
+   *{font-size:20px;font-family:宋体}<!-- * 表示选择所有元素-->
+   input[type="text"],textarea {color:#B0B0B0}
+   [for="content"]{vertical-align:top;}
+   fieldset {width:800px;margin:20px auto;padding:20px;background-color:#FCFCFF;}
+   #content {width:700px;height:300px}
+   input[type="radio"] {width: 30px;height: 25px;padding: 5 0 5 0;}
+   input[name="group"] {width: 30px;height: 25px;padding: 5 0 5 0;}
+</style>
+</head>
+<body>
+<fieldset>
+<legend>修改博客</legend>
+<form action="edit.jsp" method="post"> <!-- form表单，将内容提交到edit.jsp中，使用Post方法-->
+	标题：<input id="title" name="title" type="text" ><br><br><br>  <!-- input输入框,type=text,输入文本 -->
+	关键字：<input id="keywords" name="keywords" type="text" ><br><br><br>
+	布局:<input name="layout" type="radio" value="layout1" > <!-- radio 单选框-->
+			<img src="layout1.jpg"></img>
+		 <input name="layout" type="radio" value="layout2">
+			<img src="layout2.jpg"></img>
+		 <input name="layout" type="radio" value="layout3">
+			<img src="layout3.jpg"></img><br><br><br>
+	背景：<select name="background">   <!--select 复选框 -->
+		<option value="bk1">背景1</option>
+		<option value="bk2">背景2</option>
+		<option value="bk3">背景3</option>
+		<option value="bk4">背景4</option>
+		</select>
+		<br><br><br>
+	适合群体：<input name="group" type="checkbox" value="grp1">学前班  <!-- checkbox 复选框 -->
+			   <input name="group" type="checkbox" value="grp2">小学生
+			   <input name="group" type="checkbox" value="grp3">中学生
+			   <input name="group" type="checkbox" value="grp4">成年人
+			   <br><br><br>
+	内容：<textarea id="content" name="content"></textarea><br><br><br>
+	<input type="submit" name="save" value="保存">
+	<input type="submit" name="exit" value="退出">
+	<input type="reset" name="reset">
+</form>
+</fieldset>
+<!-- 
+	fieldset定义和用法:
+	fieldset 元素可将表单内的相关元素分组。
+	<fieldset> 标签将表单内容的一部分打包，生成一组相关表单的字段。
+	当一组表单元素放到 <fieldset> 标签内时，浏览器会以特殊方式来显示它们，它们可能有特殊的边界、3D 效果，或者甚至可创建一个子表单来处理这些元素。
+	<fieldset> 标签没有必需的或唯一的属性。
+	<legend> 标签为 fieldset 元素定义标题。
+-->
+<script type="text/javascript">
+   function inputClick(target){
+     var value="";
+     if(target.id=="title")
+        value="输入博客标题";
+     if(target.id=="keywords")
+        value="输入关键字";
+     if(target.id=="content")
+        value="在这里输入博客内容";
+
+     if(target.value==''){
+       target.style.color="#B0B0B0";
+       target.value=value;
+     }
+     else 
+     if(target.value==value){
+        target.style.color="#000000";
+        target.value="";
+     }
+   };
+   var f1=function(){inputClick(this);};  <!-- 函数赋值给一个变量 -->
+   document.getElementById("title").onclick= f1;  <!-- title找到的元素的onclick触发函数f1,效果就是点击某个文本框会出来“输入博客标题” -->
+   document.getElementById("keywords").onclick= f1;
+   document.getElementById("content").onclick= f1;
+   document.getElementById("title").onblur= f1;
+   document.getElementById("keywords").onblur= f1;
+   document.getElementById("content").onblur= f1;
+</script>
+</body>
+</html>

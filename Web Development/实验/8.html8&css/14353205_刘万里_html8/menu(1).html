@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+    <title>menu</title>
+    <style>
+        body {
+            background-color: aquamarine;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        a:link, a:visited, a:hover, a:active {
+            text-decoration: none;
+            color: currentColor;
+        }
+
+        * {
+            margin:0;
+            padding:0;
+        }
+
+        #container {
+            width: 50.1em;
+            margin: 0 auto;
+        }
+
+       #box0 {
+            position: relative;
+            text-align: center;
+            height: 4em;
+            background:url(sanya1.jpg) 20% 91%;
+        }
+
+       #box1 {
+          height: 50em;
+          background:url(sanya2.jpg) no-repeat;
+       }
+       
+
+       #menu {
+            background: linear-gradient(90deg,rgba(200,200,180,0.9),rgba(200,200,200,0.9));
+            z-index: 1;
+       }
+	   
+	   
+	   
+	   li {list-style-type:none;}  
+	   #menu>li {
+			width:15%;
+			display:inline-block;
+			position:relative;
+			padding:2px 5px;
+	   }
+	   #menu>li:hover >a {
+			border:1px solid rgba(0,0,255,0.5);
+			padding:0px 15px;
+			border-radius:8px;
+			
+	   }
+	 	/* 过渡 */
+	   #menu>li>a{
+				transition-property:background,color;
+				transition-duration:0.5s;
+				transition-timing-function:ease;
+	   }
+	   #menu>li:hover >a {
+				background:rgba(0,0,255,0.5);
+				color:white;
+	   }  
+	   
+	   
+	   
+	   	#menu ul {
+			z-index:2;
+			display:none; /*默认不显示出来先*/
+			position:absolute;
+	   }
+	   	#menu>li:hover ul{
+				display:block;/*一级菜单被hover时，二级菜单ul才可以展现出来*/
+				width:100%;
+				background:rgba(144,230,160,0.8);
+	   }
+		/* 过渡 */
+	   #menu>li li{
+				transition-property:background,color;
+				transition-duration:0.5s;
+				transition-timing-function:ease;
+	   }
+	   #menu>li li:hover {
+				background:rgba(255,255,255,0.2); /*这个li元素的背景颜色会变化*/
+				color:white; /*hover的二级菜单的字体变白色*/
+				font-size:1.2em;
+	   }
+
+     </style>
+</head>
+<body>
+    <div id="container">
+        <div id="box0">
+        </div>
+        <ul id="menu">
+            <li><a href="a.html">文件</a>
+                <ul>
+                    <li><a href="a.html">新建</a></li>
+                    <li><a href="a.html">打开</a></li>
+                    <li><a href="a.html">保存</a></li>
+                    <li><a href="a.html">另存为</a></li>
+                    <li><a href="a.html">页面设置</a></li>
+                    <li><a href="a.html">打印</a></li>
+                    <li><a href="a.html">退出</a></li>
+                </ul>
+            </li>
+            <li><a href="a.html">编辑</a>
+                <ul>
+                    <li><a href="a.html">撤销</a></li>
+                    <li><a href="a.html">剪切</a></li>
+                    <li><a href="a.html">复制</a></li>
+                    <li><a href="a.html">粘贴</a></li>
+                    <li><a href="a.html">删除</a></li>
+                    <li><a href="a.html">查找</a></li>
+                    <li><a href="a.html">查找下一个</a></li>
+                    <li><a href="a.html">替换</a></li>
+                    <li><a href="a.html">查找下一个</a></li>
+                    <li><a href="a.html">全选</a></li>
+                    <li><a href="a.html">日期时间</a></li>
+                </ul>
+            </li>
+            <li><a href="a.html">格式</a>
+                <ul>
+                    <li><a href="a.html">自动换行</a></li>
+                    <li><a href="a.html">字体</a></li>
+                </ul>
+            </li>
+            <li><a href="a.html">查看</a>
+                <ul>
+                    <li><a href="a.html">状态栏</a></li>
+
+                </ul>
+            </li>
+            <li><a href="a.html">帮助</a>
+                <ul>
+                    <li><a href="a.html">查看帮助</a></li>
+                    <li><a href="a.html">关于记事本</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div id="box1">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html><html><head>
+<script type="text/javascript">
+function LoadContent(src, iframeID) {
+var content = document.getElementById(iframeID);
+content.setAttribute('src', src);
+}
+function swipContent(src, to) {
+var bobo=document.getElementById(src);
+var content = bobo.contentDocument?bobo.contentDocument.body.innerHTML
+:bobo.Document.body.innerHTML;
+document.getElementById(to).innerHTML = content;
+}
+</script></head>
+<body>
+<a href="#" onclick="LoadContent('ajaxGet.jsp','icontent')">Link Button</a>
+<iframe id="icontent" width="600" height="0" scrolling="auto"
+frameborder="0" onload="swipContent('icontent','dest')"></iframe>
+<div id="dest" />
+</body>
+</html>

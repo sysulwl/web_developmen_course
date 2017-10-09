@@ -1,0 +1,35 @@
+﻿<!DOCTYPE  html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<title>Log in</title>
+<style type="text/css">
+   *{font-size:20px;font-family:宋体}
+   input[type="text"],textarea {color:#B0B0B0}
+   [for="content"]{vertical-align:top;}
+   fieldset {width:800px;margin:20px auto;padding:20px;background-color:#FCFCFF;}
+   #content {width:700px;height:300px}
+</style>
+</head>
+<body>
+<form action="load.jsp" method="post" enctype="application/x-www-form-urlencoded">
+<fieldset>
+<legend>登陆</legend>
+<br>
+用户：
+	<input name="name" id="name" type="text">
+</br>
+<br>
+密码：<input name="keywords" id="keywords" type="text">
+</br>
+
+<br>
+<input  name="save" type="submit" value="提交" >&nbsp
+<input  name="exit" type="submit" value="退出">&nbsp
+<button  name="reset" type="reset">复位</button>
+</br>
+</fieldset>
+</form>
+
+</body>
+</html>

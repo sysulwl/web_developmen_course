@@ -1,0 +1,28 @@
+<!DOCTYPE  html>
+<html  lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<title>layout2</title>
+<style>
+	div{border:solid 1px blue;}
+	#container{width: 800px;margin:0 auto;}
+	#first,#fifth{width:790px;margin:4px;}
+	#sthird{float:left;width:246px;margin:8px 4px;}
+	#second,#fourth{float:left;width:240px;margin:3px 2px;}
+	#third{float:right;width:530px;margin:8px 4px;}
+	#fifth{clear:both;width:790px;margin:4px;}
+</style>
+</head>
+<body>
+	<div id="container">
+		<div id="first"> header header header header header header header header header</div>
+		<div id="sthird">
+			<div id="second"> <p>left left left...</p><p>left left left...</p><p>left left left...</p></div>
+			<div id="fourth"> <p>right right right...</p> <p>right right right...</p><p>right right right...</p></div>
+			<p style="clear:both"></p>
+		</div>
+		<div id="third"> <p>main main main...</p> <p>main main main...</p><p>main main main...</p> <p>main main main...</p> <p>main main main...</p><p>main main main...</p> <p>main main main...</p></div>
+		<div id="fifth"> footer footer footer footer footer footer footer footer footer</div>
+	</div>
+</body>
+</html>
